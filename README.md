@@ -61,7 +61,7 @@ Are you already running Linux on your laptop? Great! We will still encourage you
 
 From Mac, open a Terminal, from Windows, start a new Git Bash shell. Clone the following git repository in the directory of your choosing. Your home directory, that your terminal originally opens in, is a perfectly fine place:
 
-    git clone git@github.com:comp590-19s/comp590-vm.git
+    git clone https://github.com/comp590-19s/comp590-vm.git
 
 Once the repository has cloned, continue with the following commands that will change directories into the project and bring *up* the VM. The second command will take some time to complete as it must download the virtual machine image, which is ~1.5 gigabytes, and initialize it.
 
