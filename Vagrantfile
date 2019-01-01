@@ -1,9 +1,12 @@
 # vi: set ft=ruby :
 Vagrant.configure(2) do |config|  
-  config.vm.box = "ubuntu/bionic64"
-  config.vm.provision "shell", path: "./provision.sh", privileged: false
-  config.vm.provider "virtualbox" do |v|
-    v.gui = false
-    v.memory = 1024
+  config.vm.define "comp590" do |box|
+    box.vm.box = "KrisJordan/comp590-19s"
+    box.vm.provider "virtualbox" do |v|
+     v.name = "comp590"
+     v.gui = false
+     v.memory = 1024
+     v.cpus = 2
+    end
   end
 end
