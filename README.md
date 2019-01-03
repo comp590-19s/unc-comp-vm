@@ -1,6 +1,6 @@
 ---
 title: Virtual Machine Setup Instructions
-author: COMP590 - Spring 2019
+author: Spring 2019
 documentclass: article
 geometry: margin=1.5in
 ...
@@ -61,11 +61,11 @@ Are you already running Linux on your laptop? Great! We will still encourage you
 
 From Mac, open a Terminal, from Windows, start a new Git Bash shell. Clone the following git repository in the directory of your choosing. Your home directory, that your terminal originally opens in, is a perfectly fine place:
 
-    git clone https://github.com/comp590-19s/comp590-vm.git
+    git clone https://github.com/comp590-19s/unc-comp-vm.git
 
 Once the repository has cloned, continue with the following commands that will change directories into the project and bring *up* the VM. The second command will take some time to complete as it must download the virtual machine image, which is ~1.5 gigabytes, and initialize it.
 
-    cd comp590-vm
+    cd unc-comp-vm
     vagrant up
     
 Once this has completed, your class virtual machine is running. You can login to the virtual machine with the command:
@@ -83,17 +83,17 @@ While still logged in to your VM from the steps above, you should initialize you
 
 Additionally, to make it possible for you to *push* commits to GitHub repositories, you will want to generate a key pair that will authenticate you with GitHub. The following command will ask you a series of three questions, just press enter three times for now. The default location for the key is best and you do not need a passphrase to protect the key for now.
 
-    ssh-keygen -t rsa -b 4096 -C "kris@cs.unc.edu"
+    ssh-keygen -t rsa -b 4096 -C "the-email-@address-you-use-on-github.com"
 
 Finally, you will need to add the public key you just generated to GitHub in order for authentication to work. To do so, run the following command to print it to your screen. Select the output of this command, copy it (on Windows' Git Bash copy happens every time you select text with the mouse, on Mac's terminal press Command C), and continue with the next instructions:
 
     cat ~/.ssh/id_rsa.pub
 
-Now, log in to GitHub and navigate to your user's settings. Select "SSH and GPG keys" in the sidebar. Click the green "New SSH key" button. Title the key "COMP590 VM" and paste in your public key. It should begin with `ssh-rsa`.
+Now, log in to GitHub and navigate to your user's settings. Select "SSH and GPG keys" in the sidebar. Click the green "New SSH key" button. Title the key "UNC CS VM" and paste in your public key. It should begin with `ssh-rsa`.
 
 ## 4. Exit and Halt the VM
 
-When you are done working on COMP590 related projects, you should halt the virtual machine correctly. Simply closing your terminal will not halt the virtual machine, it will continue running in the background until you do.
+When you are done working on course related projects, you should halt the virtual machine correctly. Simply closing your terminal will not halt the virtual machine, it will continue running in the background until you do.
 
     exit
 
@@ -101,4 +101,4 @@ To halt the virtual machine, first you'll need to `exit` it if you are logged in
 
     vagrant halt
 
-This powers down the virtual machine so that is not using any resources other than storage space for its data. To get started with COMP590 course work again, you'll simply need to open a terminal, change your directory to be where you setup the VM, and type `vagrant up`. The second and subsequent times you issue the `vagrant up` command will go much faster than the first time because it is already setup and simply needs to be booted.
+This powers down the virtual machine so that is not using any resources other than storage space for its data. To get started with course work again, you'll simply need to open a terminal, change your directory to be where you setup the VM, and type `vagrant up`. The second and subsequent times you issue the `vagrant up` command will go much faster than the first time because it is already setup and simply needs to be booted.
